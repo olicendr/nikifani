@@ -1,0 +1,17 @@
+
+<div *ngFor="let item of data" class="city">
+  <hr>
+  <div class="obj">
+   <img class="img" [src]="item.image" alt="город">
+    <div class="text">
+     <div class="title">
+      <div class="name">
+        {{item.name}}
+      </div>
+      <button (click)="onFavorite.emit(item)" class="like">{{item.favorite ? '&#9733;' : '&#10032;'}}</button>
+
+     </div>
+        <p class="description">{{item.description}}</p>  
+    </div>
+  </div>
+</div>

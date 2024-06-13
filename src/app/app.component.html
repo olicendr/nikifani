@@ -1,0 +1,93 @@
+<!--<header>
+  <h1 class="head">{{title}}</h1>
+</header>
+
+  <div class="nav">
+    <input (click)="onList()" type="button" class="view" value="Список">
+    <input (click)="onTile()" type="button" class="view" value="Плитка">
+    <input type="button" class="add" value="Создать">
+  </div>
+  
+<main>
+ <div class="box">
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovG6KIVEp3v160xCMY.png" alt="город москва">
+    </div>
+    <p class="name text">Москва &#9733; &#10032;</p>
+    <div class="like"> </div>  
+    <p class="description text">Столица России, город федерального значения</p>
+  </div>
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovW7s6gLwAGDjaJbNL.png" alt="город Санкт-Петербург">
+    </div>
+    <p class="name">Санкт-Петербург</p>
+    <div class="like"></div>  
+    <p class="description">Второй по численности населения город России</p>
+  </div>
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovHyQpb3vrjFvTfzJJ.png" alt="город Новосибирск">
+    </div>
+    <p class="name">Новосибирск</p>
+    <div class="like"></div>  
+    <p class="description">Третий по численности населения город России</p>
+  </div>
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovvUvY8ocQ8yIQg6Gi.png" alt="город Екатеринбург">
+    </div>
+    <p class="name">Екатеринбург</p>
+    <div class="like"></div>  
+    <p class="description">Город-миллионник в России. Тоже красивый город</p>
+  </div>
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovHWEuBOtzexaZ3VQs.png" alt="город Нижний Новгород">
+    </div>
+    <p class="name">Нижний Новгород</p>
+    <div class="like"></div>  
+    <p class="description">Город в центральной России. Красивый город.</p>
+  </div>
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovvjgSDr7xZl6A2UmH.png" alt="город Челябинск">
+    </div>
+    <p class="name">Челябинск</p>
+    <div class="like"></div>  
+    <p class="description">Город в Российской Федерации, седьмой по количеству жителей</p>
+  </div>
+  <div class="item">
+    <div class="img">
+      <img src="https://screenshots.enkod.tech/ilya_novikovc2dbr7KvIJ2dknlZ.png" alt="город Казань">
+    </div>
+    <p class="name">Казань</p>
+    <div class="like"></div>  
+    <p class="description">Город в России, столица Республики Татарстан.</p>
+  </div>
+  <p [ngClass]="{back: gay}" class="lk">grow</p> 
+ </div> 
+</main>-->
+<header>
+  <h1 class="head">{{title}}</h1>
+</header>
+
+<div class="h">
+  <div>
+    <button (click)="currentMode = mode.LIST" class="view">
+      Список
+    </button>
+    <button (click)="currentMode = mode.GRID" class="view">
+      Плитка
+    </button>
+  </div>
+  <button  class="add">
+    Создать
+  </button>
+</div>
+
+<ng-container [ngSwitch]="currentMode">
+  <app-lists *ngSwitchCase="mode.LIST" [data]="data" (onFavorite)="setFavorite($event)"></app-lists>
+  <app-grid *ngSwitchCase="mode.GRID" [data]="data" (onFavorite)="setFavorite($event)"></app-grid>
+</ng-container>

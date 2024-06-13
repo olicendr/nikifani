@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Roboto;
+    src: url(http://fonts.gstatic.com/s/roboto/v15/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2);
+  }
+body {
+    display: flex;
+    font-family: Roboto, sans-serif;
+    color: rgba(67, 70, 82, 1);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+    
+}
